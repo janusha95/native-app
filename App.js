@@ -19,7 +19,7 @@ export default function App() {
   };
 
   const addChange = () => {
-    setAddGoal([...addGoal, goal]);
+    setAddGoal([...addGoal, { key: Math.random().toString(), value: goal }]);
   };
   return (
     <View style={{ padding: 50 }}>
@@ -36,7 +36,7 @@ export default function App() {
         data={addGoal}
         renderItem={(itemData) => (
           <View key={goal} style={styles.listItem}>
-            <Text>{goal}</Text>
+            <Text>{itemData.item.value}</Text>
           </View>
         )}
       />
